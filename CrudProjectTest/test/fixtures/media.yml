@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mediaPath: MyString
+  mediaComment: MyString
+  date: 2015-07-17 11:03:35
+
+two:
+  mediaPath: MyString
+  mediaComment: MyString
+  date: 2015-07-17 11:03:35

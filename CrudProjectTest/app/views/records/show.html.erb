@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recordtitle:</strong>
+  <%= @record.recordTitle %>
+</p>
+
+<p>
+  <strong>Recorddescription:</strong>
+  <%= @record.recordDescription %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @record.startDate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @record.endDate %>
+</p>
+
+<p>
+  <strong>Endpresent:</strong>
+  <%= @record.endPresent %>
+</p>
+
+<p>
+  <strong>Recordprivacity:</strong>
+  <%= @record.recordPrivacity %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @record.userId %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @record.location %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

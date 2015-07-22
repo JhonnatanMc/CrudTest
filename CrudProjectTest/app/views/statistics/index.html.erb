@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Statistics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Login</th>
+      <th>Logout</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statistics.each do |statistic| %>
+      <tr>
+        <td><%= statistic.date %></td>
+        <td><%= statistic.logIn %></td>
+        <td><%= statistic.logOut %></td>
+        <td><%= link_to 'Show', statistic %></td>
+        <td><%= link_to 'Edit', edit_statistic_path(statistic) %></td>
+        <td><%= link_to 'Destroy', statistic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Statistic', new_statistic_path %>

@@ -1,0 +1,308 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://api.somedomain.com/",
+  "resourcePath": "users",
+  "apis": [
+    {
+      "path": "users.json",
+      "operations": [
+        {
+          "summary": "Fetches all User items",
+          "notes": "This lists all the active users",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "The request you made is not acceptable"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Requested Range Not Satisfiable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Users#index"
+        }
+      ]
+    },
+    {
+      "path": "users.json",
+      "operations": [
+        {
+          "summary": "Creates a new User",
+          "parameters": [
+            {
+              "paramType": "string",
+              "name": "userName",
+              "type": "string",
+              "description": "userName",
+              "required": true
+            },
+            {
+              "paramType": "string",
+              "name": "password",
+              "type": "string",
+              "description": "password",
+              "required": true
+            },
+            {
+              "paramType": "string",
+              "name": "firstName",
+              "type": "string",
+              "description": "fistName",
+              "required": true
+            },
+            {
+              "paramType": "string",
+              "name": "lastName",
+              "type": "string",
+              "description": "lastName",
+              "required": true
+            },
+            {
+              "paramType": "string",
+              "name": "email",
+              "type": "string",
+              "description": "email",
+              "required": true
+            },
+            {
+              "paramType": "string",
+              "name": "verificationCode",
+              "type": "string",
+              "description": "verificationCode",
+              "required": false
+            },
+            {
+              "paramType": "string",
+              "name": "facebookAccount",
+              "type": "string",
+              "description": "faceBookAccount",
+              "required": false
+            },
+            {
+              "paramType": "string",
+              "name": "linkedInAccount",
+              "type": "string",
+              "description": "linkedInAccount",
+              "required": false
+            },
+            {
+              "paramType": "string",
+              "name": "createDate",
+              "type": "dateTime",
+              "description": "createDate",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "post",
+          "nickname": "Users#create"
+        }
+      ]
+    },
+    {
+      "path": "users/{id}.json",
+      "operations": [
+        {
+          "summary": "Fetches a single User item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": "User",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Users#show"
+        }
+      ]
+    },
+    {
+      "path": "users/{id}.json",
+      "operations": [
+        {
+          "summary": "Updates an existing User",
+          "parameters": [
+            {
+              "paramType": "userName",
+              "name": "string",
+              "type": "required",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "password",
+              "name": "string",
+              "type": "required",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "firstName",
+              "name": "string",
+              "type": "required",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "lastName",
+              "name": "string",
+              "type": "required",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "email",
+              "name": "string",
+              "type": "required",
+              "description": "email",
+              "required": false
+            },
+            {
+              "paramType": "verificationCode",
+              "name": "string",
+              "type": "optional",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "facebookAccount",
+              "name": "string",
+              "type": "optional",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "linkedInAccount",
+              "name": "string",
+              "type": "optional",
+              "description": null,
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Users#update"
+        }
+      ]
+    },
+    {
+      "path": "users/{id}.json",
+      "operations": [
+        {
+          "summary": "Deletes an existing User item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Users#destroy"
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Tag": {
+      "id": "Tag",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "User Id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name"
+        }
+      },
+      "description": "A Tag object."
+    }
+  }
+}

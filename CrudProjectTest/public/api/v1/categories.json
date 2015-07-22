@@ -1,0 +1,205 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://api.somedomain.com/",
+  "resourcePath": "categories",
+  "apis": [
+    {
+      "path": "categories.json",
+      "operations": [
+        {
+          "summary": "Fetches all Category items",
+          "notes": "This lists all the active categories",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "The request you made is not acceptable"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Requested Range Not Satisfiable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Categories#index"
+        }
+      ]
+    },
+    {
+      "path": "categories.json",
+      "operations": [
+        {
+          "summary": "Creates a new Category",
+          "parameters": [
+            {
+              "paramType": "string",
+              "name": "categoryTitle",
+              "type": "string",
+              "description": "categoryTitle",
+              "required": true
+            },
+            {
+              "paramType": "string",
+              "name": "categoryColor",
+              "type": "string",
+              "description": "categoryColor",
+              "required": true
+            },
+            {
+              "paramType": "string",
+              "name": "userId",
+              "type": "string",
+              "description": "userId",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "post",
+          "nickname": "Categories#create"
+        }
+      ]
+    },
+    {
+      "path": "categories/{id}.json",
+      "operations": [
+        {
+          "summary": "Fetches a single Categoy item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Category Id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": "Category",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Categories#show"
+        }
+      ]
+    },
+    {
+      "path": "categories/{id}.json",
+      "operations": [
+        {
+          "summary": "Updates an existing Category",
+          "parameters": [
+            {
+              "paramType": "string",
+              "name": "categoryTitle",
+              "type": "string",
+              "description": "categoryTitle",
+              "required": true
+            },
+            {
+              "paramType": "string",
+              "name": "categoryColor",
+              "type": "string",
+              "description": "categoryColor",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Categories#update"
+        }
+      ]
+    },
+    {
+      "path": "categories/{id}.json",
+      "operations": [
+        {
+          "summary": "Deletes an existing Category item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Category Id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Categories#destroy"
+        }
+      ]
+    }
+  ]
+}

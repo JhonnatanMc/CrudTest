@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recordTitle: MyString
+  recordDescription: MyString
+  startDate: 2015-07-17 11:05:06
+  endDate: 2015-07-17 11:05:06
+  endPresent: 2015-07-17 11:05:06
+  recordPrivacity: MyString
+  userId: 1
+  location: MyString
+
+two:
+  recordTitle: MyString
+  recordDescription: MyString
+  startDate: 2015-07-17 11:05:06
+  endDate: 2015-07-17 11:05:06
+  endPresent: 2015-07-17 11:05:06
+  recordPrivacity: MyString
+  userId: 1
+  location: MyString

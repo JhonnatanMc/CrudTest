@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recordtitle</th>
+      <th>Recorddescription</th>
+      <th>Startdate</th>
+      <th>Enddate</th>
+      <th>Endpresent</th>
+      <th>Recordprivacity</th>
+      <th>Userid</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.recordTitle %></td>
+        <td><%= record.recordDescription %></td>
+        <td><%= record.startDate %></td>
+        <td><%= record.endDate %></td>
+        <td><%= record.endPresent %></td>
+        <td><%= record.recordPrivacity %></td>
+        <td><%= record.userId %></td>
+        <td><%= record.location %></td>
+        <td><%= link_to 'Show', record %></td>
+        <td><%= link_to 'Edit', edit_record_path(record) %></td>
+        <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Record', new_record_path %>
