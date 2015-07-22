@@ -40,5 +40,15 @@
   <%= @record.location %>
 </p>
 
+<p>
+  <strong>Isapproxstartdate:</strong>
+  <%= @record.isApproxStartDate %>
+</p>
+
+<p>
+  <strong>Isapproxenddate:</strong>
+  <%= @record.isApproxEndDate %>
+</p>
+
 <%= link_to 'Edit', edit_record_path(@record) %> |
 <%= link_to 'Back', records_path %>

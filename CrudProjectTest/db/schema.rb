@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "comments", primary_key: "commentId", force: :cascade do |t|
     t.string   "description", limit: 45
     t.datetime "date"
-    t.string   "mediaId",     limit: 45
-    t.string   "recordId",    limit: 45
+    t.integer  "mediaId",     limit: 4
+    t.integer  "recordId",    limit: 4
   end
 
   create_table "contributors", id: false, force: :cascade do |t|
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "recordPrivacity",   limit: 45
     t.integer  "userId",            limit: 4,  null: false
     t.string   "location",          limit: 45
+    t.boolean  "isApproxStartDate", limit: 1
+    t.boolean  "isApproxEndDate",   limit: 1
   end
 
   add_index "records", ["userId"], name: "userId_idx", using: :btree
@@ -93,11 +95,11 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "users", primary_key: "userId", force: :cascade do |t|
-    t.string   "userName",         limit: 45
-    t.string   "password",         limit: 45
-    t.string   "firstName",        limit: 45
-    t.string   "lastName",         limit: 45
-    t.string   "email",            limit: 45
+    t.string   "userName",         limit: 45, null: false
+    t.string   "password",         limit: 45, null: false
+    t.string   "firstName",        limit: 45, null: false
+    t.string   "lastName",         limit: 45, null: false
+    t.string   "email",            limit: 45, null: false
     t.string   "verificationCode", limit: 45
     t.string   "facebookAccount",  limit: 45
     t.string   "linkedInAccount",  limit: 45

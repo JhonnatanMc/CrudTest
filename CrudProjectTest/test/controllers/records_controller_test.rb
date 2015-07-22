@@ -18,7 +18,7 @@ class RecordsControllerTest < ActionController::TestCase
 
   test "should create record" do
     assert_difference('Record.count') do
-      post :create, record: { endDate: @record.endDate, endPresent: @record.endPresent, location: @record.location, recordDescription: @record.recordDescription, recordPrivacity: @record.recordPrivacity, recordTitle: @record.recordTitle, startDate: @record.startDate, userId: @record.userId }
+      post :create, record: { endDate: @record.endDate, endPresent: @record.endPresent, isApproxEndDate: @record.isApproxEndDate, isApproxStartDate: @record.isApproxStartDate, location: @record.location, recordDescription: @record.recordDescription, recordPrivacity: @record.recordPrivacity, recordTitle: @record.recordTitle, startDate: @record.startDate, userId: @record.userId }
     end
 
     assert_redirected_to record_path(assigns(:record))
@@ -35,7 +35,7 @@ class RecordsControllerTest < ActionController::TestCase
   end
 
   test "should update record" do
-    patch :update, id: @record, record: { endDate: @record.endDate, endPresent: @record.endPresent, location: @record.location, recordDescription: @record.recordDescription, recordPrivacity: @record.recordPrivacity, recordTitle: @record.recordTitle, startDate: @record.startDate, userId: @record.userId }
+    patch :update, id: @record, record: { endDate: @record.endDate, endPresent: @record.endPresent, isApproxEndDate: @record.isApproxEndDate, isApproxStartDate: @record.isApproxStartDate, location: @record.location, recordDescription: @record.recordDescription, recordPrivacity: @record.recordPrivacity, recordTitle: @record.recordTitle, startDate: @record.startDate, userId: @record.userId }
     assert_redirected_to record_path(assigns(:record))
   end
 

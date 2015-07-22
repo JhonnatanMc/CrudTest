@@ -4,6 +4,10 @@
   "basePath": "http://api.somedomain.com/",
   "apis": [
     {
+      "path": "records.{format}",
+      "description": "Record Management"
+    },
+    {
       "path": "comments.{format}",
       "description": "Comment Management"
     },
@@ -14,10 +18,6 @@
     {
       "path": "statistics.{format}",
       "description": "Statistics Management"
-    },
-    {
-      "path": "records.{format}",
-      "description": "Record Management"
     },
     {
       "path": "media.{format}",

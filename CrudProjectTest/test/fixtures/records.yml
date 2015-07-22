@@ -3,19 +3,23 @@
 one:
   recordTitle: MyString
   recordDescription: MyString
-  startDate: 2015-07-17 11:05:06
-  endDate: 2015-07-17 11:05:06
-  endPresent: 2015-07-17 11:05:06
+  startDate: 2015-07-22 11:08:25
+  endDate: 2015-07-22 11:08:25
+  endPresent: 2015-07-22 11:08:25
   recordPrivacity: MyString
   userId: 1
   location: MyString
+  isApproxStartDate: false
+  isApproxEndDate: false
 
 two:
   recordTitle: MyString
   recordDescription: MyString
-  startDate: 2015-07-17 11:05:06
-  endDate: 2015-07-17 11:05:06
-  endPresent: 2015-07-17 11:05:06
+  startDate: 2015-07-22 11:08:25
+  endDate: 2015-07-22 11:08:25
+  endPresent: 2015-07-22 11:08:25
   recordPrivacity: MyString
   userId: 1
   location: MyString
+  isApproxStartDate: false
+  isApproxEndDate: false

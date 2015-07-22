@@ -4,7 +4,7 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = RecordService.index
+    @records = Record.all
   end
 
   # GET /records/1
@@ -14,7 +14,7 @@ class RecordsController < ApplicationController
 
   # GET /records/new
   def new
-    @record = RecordService.newRecord
+    @record = Record.new
   end
 
   # GET /records/1/edit
@@ -24,7 +24,7 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.json
   def create
-    @record = RecordService.create(record_params)
+    @record = Record.new(record_params)
 
     respond_to do |format|
       if @record.save
@@ -54,7 +54,7 @@ class RecordsController < ApplicationController
   # DELETE /records/1
   # DELETE /records/1.json
   def destroy
-    RecordService.destroy
+    @record.destroy
     respond_to do |format|
       format.html { redirect_to records_url, notice: 'Record was successfully destroyed.' }
       format.json { head :no_content }
@@ -69,10 +69,11 @@ class RecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:recordTitle, :recordDescription, :startDate, :endDate, :endPresent, :recordPrivacity, :userId, :location)
+      params.require(:record).permit(:recordTitle, :recordDescription, :startDate, :endDate, :endPresent, :recordPrivacity, :userId, :location, :isApproxStartDate, :isApproxEndDate)
     end
     
-    swagger_controller :reords, "Record Management"
+    
+swagger_controller :reords, "Record Management"
 
   swagger_api :index do
     summary "Fetches all Record items"
@@ -102,7 +103,9 @@ class RecordsController < ApplicationController
     param :string, :endPresent, :string , :optional, "endPresent"
     param :string, :recordPrivacity, :string, :optional, "recordPrivacity"    
     param :string, :userId, :integer, :optional, "userId"  
-    param :string, :location, :string, :optional, "location"   
+    param :string, :location, :string, :optional, "location"  
+    param :integer, :isApproxStartDate, :integer, :optional, "starDate"  
+    param :integer, :isApproxEndDate, :integer, :optional, "endDate"   
     response :unauthorized
     response :not_acceptable
   end
@@ -116,7 +119,9 @@ class RecordsController < ApplicationController
     param :string, :endPresent, :string , :optional, "endPresent"
     param :string, :recordPrivacity, :string, :optional, "recordPrivacity"    
     param :string, :userId, :integer, :optional, "userId"  
-    param :string, :location, :string, :optional, "location"          
+    param :string, :location, :string, :optional, "location" 
+    param :integer, :isApproxStartDate, :integer, :optional, "starDate"  
+    param :integer, :isApproxEndDate, :integer, :optional, "endDate"           
     response :unauthorized
     response :not_found
     response :not_acceptable
@@ -129,5 +134,4 @@ class RecordsController < ApplicationController
     response :not_found
   end
 
-  
 end

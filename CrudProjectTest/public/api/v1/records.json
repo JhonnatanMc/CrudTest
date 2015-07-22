@@ -102,6 +102,20 @@
               "type": "string",
               "description": "location",
               "required": false
+            },
+            {
+              "paramType": "integer",
+              "name": "isApproxStartDate",
+              "type": "integer",
+              "description": "starDate",
+              "required": false
+            },
+            {
+              "paramType": "integer",
+              "name": "isApproxEndDate",
+              "type": "integer",
+              "description": "endDate",
+              "required": false
             }
           ],
           "responseMessages": [
@@ -222,6 +236,20 @@
               "name": "location",
               "type": "string",
               "description": "location",
+              "required": false
+            },
+            {
+              "paramType": "integer",
+              "name": "isApproxStartDate",
+              "type": "integer",
+              "description": "starDate",
+              "required": false
+            },
+            {
+              "paramType": "integer",
+              "name": "isApproxEndDate",
+              "type": "integer",
+              "description": "endDate",
               "required": false
             }
           ],
